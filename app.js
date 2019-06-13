@@ -56,7 +56,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res, next) => {
-    const title = 'Welcome from const title'
+    const title = 'Welcome to VidJot!'
     res.render('index', {
         title: title
     });
