@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //global variables
 app.use(function (req, res, next) {   // w kazdym widoku mozemy używać teraz propsa success_msg i error_msg i error
-    res.locals.success_msg = req.flash('success_msg');
+    res.locals.success_msg = req.flash('success_msg'); // potem w controllerze pisze req.flas('succes_msg', "tresc wiadomosci")
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
     res.locals.user= req.user || null
@@ -56,7 +56,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res, next) => {
-    const title = 'Welcome to VidJot!'
+    const title = "Welcome to Note n'Go!"
     res.render('index', {
         title: title
     });
